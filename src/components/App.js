@@ -14,7 +14,7 @@ const reducer = (state, action) => {
       if (random) {
         return { ...state, iginition: true };
       } else {
-        console.log("Try to start engine again");
+        return state;
       }
 
     case "gearUp":
@@ -32,11 +32,11 @@ const reducer = (state, action) => {
       }
     case "SpeedUp":
       if (state.iginition && state.gear !== 0) {
-        if (state.gear === 1) {
+        if (state.gear === 1 && state.speed < 20) {
           return { ...state, speed: state.speed + 5 };
         } else if (state.gear === 2 && state.speed < 30) {
           return { ...state, speed: state.speed + 10 };
-        } else if (state.gear === 3) {
+        } else if (state.gear === 3 && state.speed < 50) {
           return { ...state, speed: state.speed + 20 };
         } else if (state.gear === 4) {
           return { ...state, speed: state.speed + 30 };
@@ -54,8 +54,13 @@ const reducer = (state, action) => {
       }
 
     case "speedDown":
-      if (state.iginition && state.speed > 0 && state.gear !== 0) {
-        return { ...state, speed: state.speed - 5 };
+      if (state.iginition && state.speed > 0 && state.gear >= 0) {
+        return { ...state, speed: state.speed + 10 };
+      } else if (state.iginition && state.gear < 0) {
+        return {
+          ...state,
+          speed: state.speed + 10,
+        };
       } else {
         return state;
       }
