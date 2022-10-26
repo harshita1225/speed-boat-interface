@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/harshita1225/tenzies-game/static/css/main.65588c50.css",
+    "main.js": "/harshita1225/tenzies-game/static/js/main.a9246228.js",
+    "index.html": "/harshita1225/tenzies-game/index.html",
+    "main.65588c50.css.map": "/harshita1225/tenzies-game/static/css/main.65588c50.css.map",
+    "main.a9246228.js.map": "/harshita1225/tenzies-game/static/js/main.a9246228.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65588c50.css",
+    "static/js/main.a9246228.js"
+  ]
+}
