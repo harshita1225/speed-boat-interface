@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/speed-boat-interface/static/css/main.65588c50.css",
-    "main.js": "/speed-boat-interface/static/js/main.a9246228.js",
+    "main.css": "/speed-boat-interface/static/css/main.4920f905.css",
+    "main.js": "/speed-boat-interface/static/js/main.76bea04b.js",
     "index.html": "/speed-boat-interface/index.html",
-    "main.65588c50.css.map": "/speed-boat-interface/static/css/main.65588c50.css.map",
-    "main.a9246228.js.map": "/speed-boat-interface/static/js/main.a9246228.js.map"
+    "main.4920f905.css.map": "/speed-boat-interface/static/css/main.4920f905.css.map",
+    "main.76bea04b.js.map": "/speed-boat-interface/static/js/main.76bea04b.js.map"
   },
   "entrypoints": [
-    "static/css/main.65588c50.css",
-    "static/js/main.a9246228.js"
+    "static/css/main.4920f905.css",
+    "static/js/main.76bea04b.js"
   ]
 }
