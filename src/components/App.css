@@ -1,0 +1,62 @@
+#boat-container {
+  background-image: url("https://boatinggeeks.com/wp-content/uploads/2020/10/how-to-drive-a-boat.jpg");
+  background-repeat: no-repeat;
+  border: 29x solid green;
+  height: 70rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  position: relative;
+}
+.button {
+  background-color: seagreen;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.boat-title {
+  position: relative;
+  top: 6rem;
+  text-align: center;
+  color: cyan;
+  font-family: monospace;
+  font-style: oblique;
+}
+#start {
+  position: absolute;
+  top: 25rem;
+  right: 30rem;
+}
+
+#gearup {
+  position: absolute;
+  top: 24rem;
+  left: 32rem;
+}
+
+.boat-status {
+  position: relative;
+  top: 15rem;
+  font-weight: bolder;
+}
+
+#geardown {
+  position: absolute;
+  top: 27rem;
+  left: 29rem;
+}
+
+#speedup {
+  position: absolute;
+  top: 30rem;
+  left: 18rem;
+  background-color: rgb(46, 99, 199);
+}
+
+#speeddown {
+  position: absolute;
+  top: 30rem;
+  left: 25rem;
+  background-color: rgb(46, 99, 199);
+}
