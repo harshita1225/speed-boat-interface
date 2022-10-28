@@ -2,13 +2,12 @@ import { useReducer, useEffect } from "react";
 import "../components/App.css";
 
 const initalState = {
-  iginition: false,
+  ignition: false,
   speed: 0,
   gear: 0,
 };
 
-const reducer = (state, action) => {
-  const random = Math.random() < 0.5;
+/*const reducer = (state, action) => {
   switch (action.type) {
     case "onOff":
       if (random) {
@@ -67,10 +66,54 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+}; */
+
+const reducer = (state, action) => {
+  const random = Math.random() > 0.5;
+  switch (action.type) {
+    case "onOff":
+      if (random) {
+        return { ...state, ignition: true };
+      }
+      if (state.ignition) {
+        return { ...state, gear: 0, ignition: false };
+      } else {
+        return state;
+      }
+    case "gearUp":
+      if (state.ignition && state.gear < 5) {
+        return { ...state, gear: state.gear + 1 };
+      } else {
+        return state;
+      }
+    case "gearDown":
+      if (state.ignition && state.gear > -2) {
+        return { ...state, gear: state.gear - 1 };
+      } else {
+        return state;
+      }
+    case "speedUp":
+      if (state.ignition && state.gear !== 0) {
+        return { ...state, speed: state.speed + 10 * state.gear };
+      } else {
+        return state;
+      }
+    case "speedDown":
+      if (state.ignition && state.gear > 0 && state.speed > 0) {
+        return { ...state, speed: state.speed - 10 };
+      }
+      if (state.ignition && state.gear <= 0 && state.speed < 0) {
+        return { ...state, speed: state.speed + 10 };
+      } else {
+        return state;
+      }
+    default:
+      return state;
+  }
 };
 function App() {
   const [state, dispatch] = useReducer(reducer, initalState);
-  console.log(state);
+  //console.log(state);
   return (
     <div id="boat-container">
       <div>
@@ -99,7 +142,7 @@ function App() {
           </button>
           <button
             id="speedup"
-            onClick={() => dispatch({ type: "SpeedUp" })}
+            onClick={() => dispatch({ type: "speedUp" })}
             className="button"
           >
             Speed up
@@ -113,7 +156,7 @@ function App() {
           </button>
         </div>
         <div className="boat-status">
-          <li> Your engine is: {state.iginition ? "ON" : "OFF"}</li>
+          <li> Your engine is: {state.ignition ? "ON" : "OFF"}</li>
           <li>Boat gear:{state.gear}</li>
           <li> Boat speed:{state.speed}</li>
         </div>
